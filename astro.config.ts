@@ -1,14 +1,12 @@
-import { defineConfig } from 'astro/config';
-import UnoCSS from 'unocss/astro'
-
+import { defineConfig } from "astro/config";
+import UnoCSS from "unocss/astro";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://epr3.github.io',
-  base: '/personal-cv',
+  site: "https://epr3.github.io",
   integrations: [
     UnoCSS({
-      injectReset: true
+      injectReset: true,
     }),
   ],
 });

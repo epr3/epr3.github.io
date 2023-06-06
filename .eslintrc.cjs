@@ -13,6 +13,7 @@ module.exports = {
     "plugin:@typescript-eslint/recommended",
     "plugin:astro/recommended",
     "plugin:prettier/recommended",
+    "plugin:markdown/recommended",
   ],
   // ...
   overrides: [

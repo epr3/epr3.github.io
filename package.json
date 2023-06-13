@@ -12,7 +12,8 @@
     "lint:fix": "eslint --fix --ext .ts,.astro"
   },
   "dependencies": {
-    "astro": "^2.5.6"
+    "astro": "^2.5.6",
+    "dayjs": "^1.11.8"
   },
   "devDependencies": {
     "@iconify-json/heroicons": "^1.1.10",

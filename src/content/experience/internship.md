@@ -20,9 +20,9 @@ Project is forked. The original project is archived and deleted.
 - Implement SEO related code
 - Implement Google Maps with Directions API to map path towards the company posting the job
 
-### [Forest Information System for Europe](https://forest.eea.europa.eu/)
+### [Target Cross Linking Tool](https://github.com/eea/eea.docker.tct)
 
-**Description**: FISE - Forest Information System for Europe is a forest knowledge base in support of the EU Forest Strategy.
+**Description**: A platform for organizing the implementation of a country's national biodiversity strategy after AICHI (and by case after EU Strategy).
 
 #### Responsibilities
 - Maintenance & bugfixing

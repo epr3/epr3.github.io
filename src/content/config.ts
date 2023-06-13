@@ -24,7 +24,7 @@ const experiencesCollection = defineCollection({
   schema: z.object({
     companyName: z.string(),
     startDate: z.string(),
-    endDate: z.string(),
+    endDate: z.string().optional(),
     logo: z.string().optional(),
     skills: z.array(reference("skills")),
   }),
@@ -35,7 +35,7 @@ const volunteeringCollection = defineCollection({
   schema: z.object({
     orgName: z.string(),
     startDate: z.string(),
-    endDate: z.string(),
+    endDate: z.string().optional(),
     logo: z.string().optional(),
   }),
 });

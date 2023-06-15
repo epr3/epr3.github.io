@@ -1,0 +1,14 @@
+---
+company: team-extension
+---
+
+### [NOW Music App Marketing Website](https://web.archive.org/web/20200428194738/https://nowmusic.app/game)
+
+**Description**: Marketing website for managing subscriptions and devices for the NOW Music App.
+
+#### Responsibilities
+- Implement NOW Music album matching game 3D design, state machines and animations in Vue.js
+- Implement registration and authentication flows in Vue.js and Laravel Blade templates
+- Implement website according to design
+- Implement SEO and tracking scripts to website
+

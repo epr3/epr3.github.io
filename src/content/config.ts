@@ -20,13 +20,23 @@ const educationCollection = defineCollection({
 });
 
 const experiencesCollection = defineCollection({
-  type: "content",
+  type: "data",
   schema: z.object({
     companyName: z.string(),
     startDate: z.string(),
     endDate: z.string().optional(),
     logo: z.string().optional(),
-    skills: z.array(reference("skills")),
+  }),
+});
+
+const projectsCollection = defineCollection({
+  type: "content",
+  schema: z.object({
+    company: reference("experience"),
+    frontend: z.array(reference("skills")).optional(),
+    backend: z.array(reference("skills")).optional(),
+    devops: z.array(reference("skills")).optional(),
+    general: z.array(reference("skills")).optional(),
   }),
 });
 
@@ -43,8 +53,8 @@ const volunteeringCollection = defineCollection({
 const skillsCollections = defineCollection({
   type: "data",
   schema: z.object({
-    skillName: z.string(),
-    icon: z.string().optional(),
+    name: z.string(),
+    logo: z.string().optional(),
   }),
 });
 
@@ -54,4 +64,5 @@ export const collections = {
   experience: experiencesCollection,
   volunteering: volunteeringCollection,
   skills: skillsCollections,
+  projects: projectsCollection,
 };

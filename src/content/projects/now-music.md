@@ -1,8 +1,19 @@
 ---
 company: team-extension
+skills:
+  frontend:
+    - vue
+    - html
+    - css
+    - scss
+    - javascript
+  backend:
+    - php
+    - laravel
+order: 9
 ---
 
-### [NOW Music App Marketing Website](https://web.archive.org/web/20200428194738/https://nowmusic.app/game)
+### NOW Music App Marketing Website (https://web.archive.org/web/20200428194738/https://nowmusic.app/game)
 
 **Description**: Marketing website for managing subscriptions and devices for the NOW Music App.
 

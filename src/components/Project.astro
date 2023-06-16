@@ -1,0 +1,76 @@
+---
+import { CollectionEntry, getEntries } from "astro:content";
+import { Skill } from "../components/Skill";
+
+export interface Props {
+  project: CollectionEntry<"projects">;
+}
+
+const { project } = Astro.props;
+
+const computedSkills = {
+  frontend: project.data.skills.frontend
+    ? (await getEntries(project.data.skills.frontend)).map(
+        (skill) => skill.data
+      )
+    : [],
+  backend: project.data.skills.backend
+    ? (await getEntries(project.data.skills.backend)).map((skill) => skill.data)
+    : [],
+  devops: project.data.skills.devops
+    ? (await getEntries(project.data.skills.devops)).map((skill) => skill.data)
+    : [],
+};
+
+const render = await project.render();
+---
+
+<div class="prose max-w-none">
+  <render.Content />
+</div>
+
+<p>Tech stack interacted with:</p>
+<div class="flex gap-4">
+  {
+    !!computedSkills.frontend.length && (
+      <div>
+        <p>Frontend</p>
+        <div class="flex gap-2">
+          {computedSkills.frontend.map((skill) =>
+            skill.logo ? (
+              <Skill client:load logo={skill.logo} name={skill.name} />
+            ) : null
+          )}
+        </div>
+      </div>
+    )
+  }
+  {
+    !!computedSkills.backend.length && (
+      <div>
+        <p>Backend</p>
+        <div class="flex gap-2">
+          {computedSkills.backend.map((skill) =>
+            skill.logo ? (
+              <Skill client:load logo={skill.logo} name={skill.name} />
+            ) : null
+          )}
+        </div>
+      </div>
+    )
+  }
+  {
+    !!computedSkills.devops.length && (
+      <div>
+        <p>DevOps</p>
+        <div class="flex gap-2">
+          {computedSkills.devops.map((skill) =>
+            skill.logo ? (
+              <Skill client:load logo={skill.logo} name={skill.name} />
+            ) : null
+          )}
+        </div>
+      </div>
+    )
+  }
+</div>

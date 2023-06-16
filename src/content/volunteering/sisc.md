@@ -6,6 +6,8 @@
 
 ### IT Member
 
-
+Managed public facing websites/apps for events organised by the association.
 ### Front End Division Lead
+
+ Mentored new front end members and provided support on various technical challenges
 

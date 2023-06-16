@@ -1,70 +1,73 @@
 ---
+import Company from "../components/Company.astro";
+
 import Layout from "../layouts/Layout.astro";
 
 import { getCollection } from "astro:content";
 
+const volunteeringEntries = await getCollection("volunteering");
 const educationEntries = await getCollection("education");
-const projectsEntries = await getCollection("projects");
 const companiesEntries = await getCollection("experience");
 const awardsEntries = await getCollection("awards");
-const skillsEntries = await getCollection("skills");
 
-const renderedEntries = await Promise.all(
-  awardsEntries.map((item) => item.render())
-);
-
-const companiesWithProjects = await Promise.all(
-  companiesEntries.map(async (item) => ({
-    name: item.data.companyName,
-    startDate: item.data.startDate,
-    endDate: item.data.endDate,
-    projects: await Promise.all(
-      projectsEntries
-        .filter((project) => project.data.company.id === item.id)
-        .map(async (project) => ({
-          render: await project.render(),
-          skills: {
-            frontend: project.data.frontend,
-            backend: project.data.backend,
-            devops: project.data.devops,
-          },
-        }))
-    ),
+const renderedAwardsEntries = await Promise.all(
+  awardsEntries.map(async (item) => ({
+    title: item.data.title,
+    render: await item.render(),
   }))
 );
+const renderedVolunteeringEntries = await Promise.all(
+  volunteeringEntries.map(async (item) => ({
+    orgName: item.data.orgName,
+    startDate: item.data.startDate,
+    logo: item.data.logo,
+    endDate: item.data.endDate,
+    render: await item.render(),
+  }))
+);
+
+const companiesWithProjects = companiesEntries.map((item) => ({
+  name: item.data.companyName,
+  startDate: item.data.startDate,
+  endDate: item.data.endDate,
+  id: item.id,
+}));
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Eduard Predescu">
+  <a href="/Eduard_Predescu_Resume.pdf" target="_blank">Resume</a>
   {
     companiesWithProjects.map((item) => (
-      <>
-        <p>{item.name}</p>
-        <p>Projects</p>
-        {item.projects.map((project) => (
-          <>
-            <p>Skills used:</p>
-            <div class="flex gap-4">
-              <div>
-                <p>Frontend</p>
-                <div class="flex gap-2" />
-              </div>
-            </div>
-            <project.render.Content />
-          </>
-        ))}
-      </>
+      <Company
+        startDate={item.startDate}
+        endDate={item.endDate}
+        name={item.name}
+        id={item.id}
+      />
     ))
   }
-  {renderedEntries.map((item) => <item.Content />)}
-  <div class="flex">
+  <div class="prose max-w-none">
     {
-      skillsEntries.map((item) =>
-        item.data.logo ? (
-          <div class={`w-8 h-8 i-logos-${item.data.logo}`} />
-        ) : null
-      )
+      renderedVolunteeringEntries.map((item) => (
+        <>
+          <>
+            <h5>{item.orgName}</h5>
+            <item.render.Content />
+          </>
+        </>
+      ))
     }
   </div>
-  <p class="text-red-4">test</p>
-  <div class="i-logos-astro-icon w-4 h-4"></div>
+  <div class="prose max-w-none">
+    {
+      renderedAwardsEntries.map((item) => (
+        <>
+          <>
+            <h5>{item.title}</h5>
+            <item.render.Content />
+          </>
+        </>
+      ))
+    }
+  </div>
 </Layout>

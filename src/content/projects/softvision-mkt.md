@@ -1,17 +1,22 @@
 ---
 company: cognizant-softvision
-frontend:
-  - nuxt
-  - vue
-  - html
-  - css
-  - javascript
-backend:
-  - storyblok
-  - prismic
-  - node-js
-devops:
-  - netlify
+skills:
+  frontend:
+    - nuxt
+    - vue
+    - html
+    - css
+    - scss
+    - javascript
+    - tailwind
+    - unocss
+  backend:
+    - storyblok
+    - prismic
+    - node-js
+  devops:
+    - netlify
+order: 11
 ---
 ### Marketing Website for an Accounting SaaS
 

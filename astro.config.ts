@@ -1,6 +1,8 @@
 import { defineConfig } from "astro/config";
 import UnoCSS from "unocss/astro";
 
+import react from "@astrojs/react";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://epr3.github.io",
@@ -8,5 +10,6 @@ export default defineConfig({
     UnoCSS({
       injectReset: true,
     }),
+    react(),
   ],
 });

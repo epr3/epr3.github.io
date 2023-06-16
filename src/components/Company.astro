@@ -1,0 +1,23 @@
+---
+import { getCollection } from "astro:content";
+import Project from "./Project.astro";
+export interface Props {
+  id: string;
+  name: string;
+  startDate: string;
+  endDate?: string;
+}
+
+const { id, name, startDate, endDate } = Astro.props;
+
+const projects = await getCollection(
+  "projects",
+  (entry) => entry.data.company.id === id
+);
+---
+
+<>
+  <p>{name}</p>
+  <p>Projects</p>
+  {projects.map((project) => <Project project={project} />)}
+</>

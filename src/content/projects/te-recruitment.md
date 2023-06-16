@@ -1,5 +1,16 @@
 ---
 company: team-extension
+skills:
+  frontend:
+    - react-native
+    - react
+    - html
+    - css
+    - javascript
+  backend:
+    - php
+    - laravel
+order: 7
 ---
 
 ### Outsourcing recruitment and quotation application

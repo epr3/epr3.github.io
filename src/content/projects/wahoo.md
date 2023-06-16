@@ -1,8 +1,18 @@
 ---
 company: team-extension
+skills:
+  frontend:
+    - html
+    - css
+    - javascript
+    - jquery
+    - three-js
+  backend:
+    - php
+order: 6
 ---
 
-### [Wahoo Docks](https://www.wahoodocks.com/)
+### Wahoo Docks (https://www.wahoodocks.com/)
 
 **Description**: Application managing accounting, inventory and a 3D CAD dock-modelling app
 

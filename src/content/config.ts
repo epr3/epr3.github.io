@@ -33,10 +33,13 @@ const projectsCollection = defineCollection({
   type: "content",
   schema: z.object({
     company: reference("experience"),
-    frontend: z.array(reference("skills")).optional(),
-    backend: z.array(reference("skills")).optional(),
-    devops: z.array(reference("skills")).optional(),
-    general: z.array(reference("skills")).optional(),
+    skills: z.object({
+      frontend: z.array(reference("skills")).optional(),
+      backend: z.array(reference("skills")).optional(),
+      devops: z.array(reference("skills")).optional(),
+      general: z.array(reference("skills")).optional(),
+    }),
+    order: z.number(),
   }),
 });
 

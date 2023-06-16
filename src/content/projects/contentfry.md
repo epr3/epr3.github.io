@@ -1,8 +1,15 @@
 ---
 company: team-extension
+skills:
+  frontend:
+    - vue
+    - html
+    - css
+    - javascript
+order: 8
 ---
 
-### [Contentfry Wall Creator](https://contentfry.com/en/)
+### Contentfry Social Media "Wall" Customiser & Creator (https://contentfry.com/en/)
 
 **Description**: Web application managing social media content from various sources and embedding selected content inside iframes and/or dedicated pages.
 

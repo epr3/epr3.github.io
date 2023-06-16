@@ -1,8 +1,19 @@
 ---
 company: team-extension
+skills:
+  frontend:
+    - vue
+    - html
+    - css
+    - javascript
+    - d3
+  backend:
+    - php
+    - craft-cms
+order: 10
 ---
 
-### [Sports bets odds comparator and tips website](https://punepariu.ro)
+### Sports bets odds comparator and tips website (https://punepariu.ro)
 
 **Description**: Self-managed website powered by CraftCMS that handles news, promotions and various tips related to sporting bets.
 

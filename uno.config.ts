@@ -1,4 +1,4 @@
-import { defineConfig, presetIcons, presetUno } from "unocss";
+import { defineConfig, presetIcons, presetUno, presetTypography } from "unocss";
 import logos from "@iconify-json/logos";
 
 export default defineConfig({
@@ -8,6 +8,7 @@ export default defineConfig({
   ],
   presets: [
     presetUno(),
+    presetTypography(),
     presetIcons({
       collections: {
         heroicons: () =>

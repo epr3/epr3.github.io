@@ -1,5 +1,9 @@
 ---
 company: elsaco
+skills:
+  backend:
+    - node-js
+order: 5
 ---
 
 ### Discounts management app

@@ -1,10 +1,21 @@
 ---
 company: internship
+skills:
+  frontend:
+    - jekyll
+    - html
+    - css
+    - less
+    - javascript
+    - grunt
+  backend:
+    - ruby
+order: 1
 ---
 
-### [Junio Summerjobs 2016](https://github.com/epr3/summer2016)
+### Junio Summerjobs 2016 (https://github.com/epr3/summer2016)
 
-Project is forked. The original project is archived and deleted.
+Project is forked. The original project is archived and/or deleted.
 
 **Description**: Marketing website advertising summer job offers primarily aimed towards students.
 

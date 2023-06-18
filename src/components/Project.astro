@@ -1,6 +1,6 @@
 ---
 import { CollectionEntry, getEntries } from "astro:content";
-import { Skill } from "../components/Skill";
+import SkillsCard from "./SkillsCard.astro";
 
 export interface Props {
   project: CollectionEntry<"projects">;
@@ -25,52 +25,27 @@ const computedSkills = {
 const render = await project.render();
 ---
 
-<div class="prose max-w-none">
-  <render.Content />
-</div>
+<div class="flex flex-col gap-6">
+  <div class="prose max-w-none">
+    <render.Content />
+  </div>
 
-<p>Tech stack interacted with:</p>
-<div class="flex gap-4">
-  {
-    !!computedSkills.frontend.length && (
-      <div>
-        <p>Frontend</p>
-        <div class="flex gap-2">
-          {computedSkills.frontend.map((skill) =>
-            skill.logo ? (
-              <Skill client:load logo={skill.logo} name={skill.name} />
-            ) : null
-          )}
-        </div>
-      </div>
-    )
-  }
-  {
-    !!computedSkills.backend.length && (
-      <div>
-        <p>Backend</p>
-        <div class="flex gap-2">
-          {computedSkills.backend.map((skill) =>
-            skill.logo ? (
-              <Skill client:load logo={skill.logo} name={skill.name} />
-            ) : null
-          )}
-        </div>
-      </div>
-    )
-  }
-  {
-    !!computedSkills.devops.length && (
-      <div>
-        <p>DevOps</p>
-        <div class="flex gap-2">
-          {computedSkills.devops.map((skill) =>
-            skill.logo ? (
-              <Skill client:load logo={skill.logo} name={skill.name} />
-            ) : null
-          )}
-        </div>
-      </div>
-    )
-  }
+  <p class="font-semibold">Tech stack interacted with:</p>
+  <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+    {
+      !!computedSkills.frontend.length && (
+        <SkillsCard name="Frontend" projects={computedSkills.frontend} />
+      )
+    }
+    {
+      !!computedSkills.backend.length && (
+        <SkillsCard name="Backend" projects={computedSkills.backend} />
+      )
+    }
+    {
+      !!computedSkills.devops.length && (
+        <SkillsCard name="DevOps" projects={computedSkills.devops} />
+      )
+    }
+  </div>
 </div>

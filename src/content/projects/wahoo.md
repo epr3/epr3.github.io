@@ -12,7 +12,9 @@ skills:
 order: 6
 ---
 
-### Wahoo Docks (https://www.wahoodocks.com/)
+### Wahoo Docks
+
+##### Link: https://www.wahoodocks.com/
 
 **Description**: Application managing accounting, inventory and a 3D CAD dock-modelling app
 

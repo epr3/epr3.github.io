@@ -27,4 +27,5 @@ order: 12
 - Mantain, manage and adjusted Postgres DB to match business requirements
 - Manage and update documentation and OpenAPI 3 schema
 - Implemented testing in accordance to the Clean Architecture
-- Handle basic DevOps operations in AWS using Gitlab CI/AWS CLI/Infrastructure handling scripts in Golang
+- Handle basic DevOps operations in AWS using Gitlab CI/AWS CLI
+- Maintain infrastructure cost reduction scripts in Golang

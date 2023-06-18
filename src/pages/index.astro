@@ -1,30 +1,13 @@
 ---
+import cta from "../assets/images/cta.svg";
+
 import Company from "../components/Company.astro";
 
 import Layout from "../layouts/Layout.astro";
 
 import { getCollection } from "astro:content";
 
-const volunteeringEntries = await getCollection("volunteering");
-const educationEntries = await getCollection("education");
 const companiesEntries = await getCollection("experience");
-const awardsEntries = await getCollection("awards");
-
-const renderedAwardsEntries = await Promise.all(
-  awardsEntries.map(async (item) => ({
-    title: item.data.title,
-    render: await item.render(),
-  }))
-);
-const renderedVolunteeringEntries = await Promise.all(
-  volunteeringEntries.map(async (item) => ({
-    orgName: item.data.orgName,
-    startDate: item.data.startDate,
-    logo: item.data.logo,
-    endDate: item.data.endDate,
-    render: await item.render(),
-  }))
-);
 
 const companiesWithProjects = companiesEntries.map((item) => ({
   name: item.data.companyName,
@@ -35,39 +18,76 @@ const companiesWithProjects = companiesEntries.map((item) => ({
 ---
 
 <Layout title="Eduard Predescu">
-  <a href="/Eduard_Predescu_Resume.pdf" target="_blank">Resume</a>
-  {
-    companiesWithProjects.map((item) => (
-      <Company
-        startDate={item.startDate}
-        endDate={item.endDate}
-        name={item.name}
-        id={item.id}
-      />
-    ))
-  }
-  <div class="prose max-w-none">
-    {
-      renderedVolunteeringEntries.map((item) => (
-        <>
-          <>
-            <h5>{item.orgName}</h5>
-            <item.render.Content />
-          </>
-        </>
-      ))
-    }
-  </div>
-  <div class="prose max-w-none">
-    {
-      renderedAwardsEntries.map((item) => (
-        <>
-          <>
-            <h5>{item.title}</h5>
-            <item.render.Content />
-          </>
-        </>
-      ))
-    }
+  <div class="flex flex-col gap-10">
+    <div class="flex flex-col gap-8 max-w-prose container mx-auto mb-10">
+      <h3 class="text-3xl text-white text-center font-passion">
+        Hello, I'm <span class="text-[#FFF500]">Eduard Predescu</span> 👋
+      </h3>
+
+      <p class="text-xl text-white text-center font-inconsolata">
+        I am a front end/full stack developer based in Bucharest, RO. I have 6
+        years of experience working (mostly) with front end technologies, but
+        can get down to business with backend and/or DevOps get an app from zero
+        to 🚀
+      </p>
+
+      <p class="text-xl text-white text-center font-inconsolata">
+        I make web applications, usually with Nuxt/Next.js and whatever
+        technology is needed for the required use-case.
+      </p>
+    </div>
+    <div class="container max-w-prose mx-auto flex justify-center gap-4">
+      <a
+        class="p-4 rounded-full bg-white shadow-lg"
+        href="mailto:eduard.florin.predescu@gmail.com"
+        target="_blank"
+      >
+        <div class="i-heroicons-envelope text-black w-8 h-8"></div>
+      </a>
+      <a
+        class="p-4 rounded-full bg-white shadow-lg"
+        href="https://www.linkedin.com/in/eduardpredescu/"
+        target="_blank"
+      >
+        <div class="i-logos-linkedin-icon w-8 h-8"></div>
+      </a>
+      <a
+        class="p-4 rounded-full bg-white shadow-lg"
+        href="https://github.com/epr3/"
+        target="_blank"
+      >
+        <div class="i-logos-github-icon w-8 h-8"></div>
+      </a>
+      <a
+        class="relative p-4 rounded-full bg-white shadow-lg"
+        href="/Eduard_Predescu_Resume.pdf"
+        target="_blank"
+      >
+        <img
+          class="absolute right-[80%] bottom-full max-w-none w-[150px]"
+          src={cta.src}
+          width={cta.width}
+          height={cta.height}
+          alt="Stylized call to action"
+        />
+        <div class="i-heroicons-document-solid text-black w-8 h-8"></div>
+      </a>
+    </div>
+
+    <div class="container max-w-prose mx-auto flex flex-col">
+      <h2 class="text-white text-2xl text-center font-bold">Experience</h2>
+      <div class="flex flex-col gap-10 divide-y-2 divide-[#FFF500]">
+        {
+          companiesWithProjects.map((item) => (
+            <Company
+              startDate={item.startDate}
+              endDate={item.endDate}
+              name={item.name}
+              id={item.id}
+            />
+          ))
+        }
+      </div>
+    </div>
   </div>
 </Layout>

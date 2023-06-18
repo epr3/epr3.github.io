@@ -13,7 +13,9 @@ skills:
 order: 10
 ---
 
-### Sports bets odds comparator and tips website (https://punepariu.ro)
+### Sports bets odds comparator and tips website
+
+##### Link: https://punepariu.ro
 
 **Description**: Self-managed website powered by CraftCMS that handles news, promotions and various tips related to sporting bets.
 

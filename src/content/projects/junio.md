@@ -15,7 +15,7 @@ order: 2
 
 ### Junio/Stagii pe Bune
 
-##### Link: https://junio.ro/
+#### Link: https://junio.ro/
 
 **Description**: Job board aimed towards students facilitating entrance on the job market through internships and/or part-time jobs.
 

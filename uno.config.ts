@@ -19,7 +19,7 @@ export default defineConfig({
     presetWebFonts({
       provider: "google",
       fonts: {
-        sans: "Inter:100,200,300,400,500,600,700,800,900",
+        sans: "Inter:400,500,600,700",
         passion: "Passion One",
         inconsolata: "Inconsolata",
       },

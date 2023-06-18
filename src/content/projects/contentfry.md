@@ -11,7 +11,7 @@ order: 8
 
 ### Contentfry Social Media "Wall" Customiser & Creator
 
-##### Link: https://contentfry.com/en/
+#### Link: https://contentfry.com/en/
 
 **Description**: Web application managing social media content from various sources and embedding selected content inside iframes and/or dedicated pages.
 

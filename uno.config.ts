@@ -6,13 +6,10 @@ import {
   presetWebFonts,
   transformerVariantGroup,
 } from "unocss";
-import logos from "@iconify-json/logos";
 
 export default defineConfig({
   // ...UnoCSS options
-  safelist: [
-    ...Object.keys(logos.icons.icons).map((item) => `i-logos-${item}`),
-  ],
+
   transformers: [transformerVariantGroup()],
   presets: [
     presetUno(),
@@ -29,7 +26,9 @@ export default defineConfig({
       collections: {
         heroicons: () =>
           import("@iconify-json/heroicons/icons.json").then((i) => i.default),
-        logos: () => logos.icons,
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        //@ts-ignore
+        logos: import("@iconify-json/logos/icons.json").then((i) => i.default),
       },
     }),
   ],

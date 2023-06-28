@@ -1,4 +1,5 @@
 ---
+import dayjs from "dayjs";
 import cta from "../assets/images/cta.svg";
 
 import Company from "../components/Company.astro";
@@ -15,6 +16,10 @@ const companiesWithProjects = companiesEntries.map((item) => ({
   endDate: item.data.endDate,
   id: item.id,
 }));
+
+companiesWithProjects.sort((a, b) =>
+  dayjs(a.startDate).isAfter(dayjs(b.startDate)) ? -1 : 1
+);
 ---
 
 <Layout title="Eduard Predescu">

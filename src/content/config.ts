@@ -5,6 +5,7 @@ const experiencesCollection = defineCollection({
   schema: z.object({
     companyName: z.string(),
     logo: z.string().optional(),
+    order: z.number(),
   }),
 });
 

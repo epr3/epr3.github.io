@@ -2,15 +2,12 @@
 import dayjs from "dayjs";
 import { getCollection } from "astro:content";
 import Project from "./Project.astro";
-import { map } from "astro/zod";
 export interface Props {
   id: string;
   name: string;
-  startDate: string;
-  endDate?: string;
 }
 
-const { id, name, startDate, endDate } = Astro.props;
+const { id, name } = Astro.props;
 
 const titles = await getCollection(
   "titles",

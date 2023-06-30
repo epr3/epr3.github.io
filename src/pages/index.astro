@@ -1,5 +1,4 @@
 ---
-import dayjs from "dayjs";
 import cta from "../assets/images/cta.svg";
 
 import Company from "../components/Company.astro";
@@ -12,14 +11,11 @@ const companiesEntries = await getCollection("experience");
 
 const companiesWithProjects = companiesEntries.map((item) => ({
   name: item.data.companyName,
-  startDate: item.data.startDate,
-  endDate: item.data.endDate,
+  order: item.data.order,
   id: item.id,
 }));
 
-companiesWithProjects.sort((a, b) =>
-  dayjs(a.startDate).isAfter(dayjs(b.startDate)) ? -1 : 1
-);
+companiesWithProjects.sort((a, b) => (a.order > b.order ? -1 : 1));
 ---
 
 <Layout title="Eduard Predescu">
@@ -92,12 +88,7 @@ companiesWithProjects.sort((a, b) =>
       <div class="flex flex-col gap-10 divide-y-2 divide-[#FFF500]">
         {
           companiesWithProjects.map((item) => (
-            <Company
-              startDate={item.startDate}
-              endDate={item.endDate}
-              name={item.name}
-              id={item.id}
-            />
+            <Company name={item.name} id={item.id} />
           ))
         }
       </div>

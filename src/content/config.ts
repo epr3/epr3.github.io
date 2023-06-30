@@ -4,9 +4,17 @@ const experiencesCollection = defineCollection({
   type: "data",
   schema: z.object({
     companyName: z.string(),
+    logo: z.string().optional(),
+  }),
+});
+
+const titlesCollection = defineCollection({
+  type: "data",
+  schema: z.object({
+    company: reference("experience"),
+    title: z.string(),
     startDate: z.string(),
     endDate: z.string().optional(),
-    logo: z.string().optional(),
   }),
 });
 
@@ -36,4 +44,5 @@ export const collections = {
   experience: experiencesCollection,
   skills: skillsCollections,
   projects: projectsCollection,
+  titles: titlesCollection,
 };

@@ -2,6 +2,7 @@
 import dayjs from "dayjs";
 import { getCollection } from "astro:content";
 import Project from "./Project.astro";
+import { map } from "astro/zod";
 export interface Props {
   id: string;
   name: string;
@@ -10,6 +11,11 @@ export interface Props {
 }
 
 const { id, name, startDate, endDate } = Astro.props;
+
+const titles = await getCollection(
+  "titles",
+  (entry) => entry.data.company.id === id
+);
 
 const projects = await getCollection(
   "projects",
@@ -20,17 +26,34 @@ projects.sort((a, b) => (a.data.order > b.data.order ? -1 : 1));
 ---
 
 <div class="flex flex-col gap-4 pt-8">
-  <div class="flex flex-col gap-4 md:(flex-row items-center justify-between)">
-    <h2 class="text-xl font-semibold">{name}</h2>
-    <div
-      class="text-white font-semibold text-lg py-2 px-4 bg-blue-9 rounded-full text-center"
-    >
-      {dayjs(startDate).format("MMM YYYY")} - {
-        endDate ? dayjs(endDate).format("MMM YYYY") : "present"
-      }
-    </div>
+  <div
+    class="px-6 py-4 bg-black text-white text-center md:(text-center self-start)"
+  >
+    <h2 class="text-3xl font-semibold">{name}</h2>
   </div>
-
-  <h3 class="text-2xl font-medium">Projects</h3>
-  {projects.map((project) => <Project project={project} />)}
+  <div class="flex flex-col gap-2 justify-center border-b border-gray-3 py-3">
+    {
+      titles.map((item) => (
+        <div class="flex flex-col gap-4 md:(flex-row items-center justify-between)">
+          <h3 class="text-2xl font-medium basis-1/2">{item.data.title}</h3>
+          <div class="text-white font-semibold text-lg py-2 px-4 bg-blue-9 rounded-full text-center md:basis-1/2">
+            {dayjs(item.data.startDate).format("MMM YYYY")} -{" "}
+            {item.data.endDate
+              ? dayjs(item.data.endDate).format("MMM YYYY")
+              : "present"}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+  {
+    !!projects.length && (
+      <>
+        <h3 class="text-2xl font-medium">Projects</h3>
+        {projects.map((project) => (
+          <Project project={project} />
+        ))}
+      </>
+    )
+  }
 </div>

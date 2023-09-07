@@ -8,9 +8,6 @@ export default defineConfig({
   build: {
     inlineStylesheets: "auto",
   },
-  experimental: {
-    assets: true,
-  },
   site: "https://epr3.github.io",
   integrations: [
     UnoCSS({

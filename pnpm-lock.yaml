@@ -44,20 +44,20 @@ devDependencies:
     specifier: ^6.3.0
     version: 6.6.0(eslint@8.48.0)(typescript@5.2.2)
   '@unocss/preset-icons':
-    specifier: ^0.54.2
-    version: 0.54.3
+    specifier: ^0.55.7
+    version: 0.55.7
   '@unocss/preset-typography':
-    specifier: ^0.54.2
-    version: 0.54.3
+    specifier: ^0.55.7
+    version: 0.55.7
   '@unocss/preset-web-fonts':
-    specifier: ^0.54.2
-    version: 0.54.3
+    specifier: ^0.55.7
+    version: 0.55.7
   '@unocss/reset':
-    specifier: ^0.54.2
-    version: 0.54.3
+    specifier: ^0.55.7
+    version: 0.55.7
   '@unocss/transformer-variant-group':
-    specifier: ^0.54.2
-    version: 0.54.3
+    specifier: ^0.55.7
+    version: 0.55.7
   '@vitejs/plugin-react':
     specifier: ^4.0.4
     version: 4.0.4(vite@4.4.9)
@@ -1293,18 +1293,8 @@ packages:
       unconfig: 0.3.10
     dev: true
 
-  /@unocss/core@0.54.3:
-    resolution: {integrity: sha512-XAVfnq6hO7Zaa5VnsFKi1KQKgUS3jOhZYgdedIgJVx2WkmkpM/UQ2lummIlB27uHp0o+Wzf5kueKlMS3q+2lvA==}
-    dev: true
-
   /@unocss/core@0.55.7:
     resolution: {integrity: sha512-c+bWe844Xjlwc1EPwHj0+n3LpntJG7ELPbEOOxNIG+CQdcEX0l1G0rkM8+nKstJ9WJmgpf1HdJQLVMF62HXvhw==}
-    dev: true
-
-  /@unocss/extractor-arbitrary-variants@0.54.3:
-    resolution: {integrity: sha512-Vab8pb1EQZ4KO63N/w2nvean8DlAhTurupmNWEqLzj7XsfH6IMJiUyonYXxTUKWY8oLsHEh3OOTuLMv7NV7bSQ==}
-    dependencies:
-      '@unocss/core': 0.54.3
     dev: true
 
   /@unocss/extractor-arbitrary-variants@0.55.7:
@@ -1338,16 +1328,6 @@ packages:
       '@unocss/core': 0.55.7
     dev: true
 
-  /@unocss/preset-icons@0.54.3:
-    resolution: {integrity: sha512-RIZ9gewKqKuvnDvi66rHzBShiWjUPS4I1JchKMkofX8h4uJniPtQFb2Yy5YRzm0YL5eZPWjLQK5uHiNN+EhMkg==}
-    dependencies:
-      '@iconify/utils': 2.1.9
-      '@unocss/core': 0.54.3
-      ofetch: 1.3.3
-    transitivePeerDependencies:
-      - supports-color
-    dev: true
-
   /@unocss/preset-icons@0.55.7:
     resolution: {integrity: sha512-JXLOHkyEKKAjLTqjAxYfhwln05WXilGg3jctkZWKpMNawPaonrGt3kZT12YMuMmOryxk7UcyKB0dtYc+p3QYvw==}
     dependencies:
@@ -1356,13 +1336,6 @@ packages:
       ofetch: 1.3.3
     transitivePeerDependencies:
       - supports-color
-    dev: true
-
-  /@unocss/preset-mini@0.54.3:
-    resolution: {integrity: sha512-HgjoAn3TwO0jimNPoEF5q8mOHUlHChKfIdTdPUGg4zIfFK+lPBSsmTJFnTRNx/Hr2YkaiTV2C9pDBRFazw/zwQ==}
-    dependencies:
-      '@unocss/core': 0.54.3
-      '@unocss/extractor-arbitrary-variants': 0.54.3
     dev: true
 
   /@unocss/preset-mini@0.55.7:
@@ -1376,13 +1349,6 @@ packages:
     resolution: {integrity: sha512-aDsuN3a/ZirbCDKpFsue9tc8MHs3l0Rl81n2ZOdIrJoZW4YWyydMVl++cz/HERZW81ZySK8EJKwGBaMJMgsnHA==}
     dependencies:
       '@unocss/core': 0.55.7
-    dev: true
-
-  /@unocss/preset-typography@0.54.3:
-    resolution: {integrity: sha512-Fm6d9huYax0f0L48we7QER5+XCicp1O9CvP+10AwXgizBwrqmXo+BFafodc65QPOAnGUixmGpJjSgm6kN/76Hw==}
-    dependencies:
-      '@unocss/core': 0.54.3
-      '@unocss/preset-mini': 0.54.3
     dev: true
 
   /@unocss/preset-typography@0.55.7:
@@ -1400,13 +1366,6 @@ packages:
       '@unocss/preset-wind': 0.55.7
     dev: true
 
-  /@unocss/preset-web-fonts@0.54.3:
-    resolution: {integrity: sha512-z8hmt1voo8UpWJvPFiNR+y83gXuN+/l1l4SHZ/yiVQtSsO7R/po6p0qTb0t1hNlk4tUcAz8Olq8ArmU3x8QyJA==}
-    dependencies:
-      '@unocss/core': 0.54.3
-      ofetch: 1.3.3
-    dev: true
-
   /@unocss/preset-web-fonts@0.55.7:
     resolution: {integrity: sha512-ygAz0540kdBapErW2BcObWfQT/6g0SpVUPYg92PPiZD57CZAvuNXiYTfFMRXd88QrBL1zIrZ6NrzY0NZ645H+w==}
     dependencies:
@@ -1419,10 +1378,6 @@ packages:
     dependencies:
       '@unocss/core': 0.55.7
       '@unocss/preset-mini': 0.55.7
-    dev: true
-
-  /@unocss/reset@0.54.3:
-    resolution: {integrity: sha512-5FjdfZKvwJ0JrUr2rVWnZzHfg7jOCMaJjD93VvCdFIr8Q9dChSzuZoWGCcx6EEsZm5zEfpB7+qwwz6Y2lN9vxg==}
     dev: true
 
   /@unocss/reset@0.55.7:
@@ -1456,12 +1411,6 @@ packages:
     dependencies:
       '@unocss/core': 0.55.7
       css-tree: 2.3.1
-    dev: true
-
-  /@unocss/transformer-variant-group@0.54.3:
-    resolution: {integrity: sha512-4YZSi2LBTvrvPKDFZdb7rmqAlFr+hf4f92MfmPDRPwFp/qvJeO2UoBUCkiZoTjLHzCykHuLEJUiXgr3QNO2D1A==}
-    dependencies:
-      '@unocss/core': 0.54.3
     dev: true
 
   /@unocss/transformer-variant-group@0.55.7:

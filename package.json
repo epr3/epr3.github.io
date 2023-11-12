@@ -13,10 +13,10 @@
   },
   "dependencies": {
     "@astrojs/react": "3.0.4",
-    "@floating-ui/react": "0.26.1",
-    "@types/react": "18.2.33",
-    "@types/react-dom": "18.2.14",
-    "astro": "3.4.0",
+    "@floating-ui/react": "0.26.2",
+    "@types/react": "18.2.37",
+    "@types/react-dom": "18.2.15",
+    "astro": "3.5.3",
     "dayjs": "1.11.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -24,15 +24,15 @@
   "devDependencies": {
     "@iconify-json/heroicons": "^1.1.13",
     "@iconify-json/logos": "^1.1.37",
-    "@typescript-eslint/eslint-plugin": "^6.9.0",
-    "@typescript-eslint/parser": "^6.9.0",
-    "@unocss/preset-icons": "^0.57.1",
-    "@unocss/preset-typography": "^0.57.1",
-    "@unocss/preset-web-fonts": "^0.57.1",
-    "@unocss/reset": "^0.57.1",
-    "@unocss/transformer-variant-group": "^0.57.1",
-    "@vitejs/plugin-react": "^4.1.0",
-    "eslint": "^8.52.0",
+    "@typescript-eslint/eslint-plugin": "^6.10.0",
+    "@typescript-eslint/parser": "^6.10.0",
+    "@unocss/preset-icons": "^0.57.3",
+    "@unocss/preset-typography": "^0.57.3",
+    "@unocss/preset-web-fonts": "^0.57.3",
+    "@unocss/reset": "^0.57.3",
+    "@unocss/transformer-variant-group": "^0.57.3",
+    "@vitejs/plugin-react": "^4.1.1",
+    "eslint": "^8.53.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-astro": "^0.29.1",
     "eslint-plugin-markdown": "^3.0.1",
@@ -40,7 +40,7 @@
     "prettier": "^3.0.1",
     "prettier-plugin-astro": "^0.12.1",
     "typescript": "^5.2.2",
-    "unocss": "^0.57.1",
+    "unocss": "^0.57.3",
     "vite": "^4.5.0"
   }
 }

@@ -17,7 +17,7 @@ order: 9
 
 #### Link: https://web.archive.org/web/20200428194738/https://nowmusic.app/game
 
-**Description**: Marketing website for managing subscriptions and devices for the NOW Music App.
+**Description**: Marketing website for managing subscriptions and devices for the NOW Music App (with an active subscriber count of ~500k users).
 
 #### Responsibilities
 - Implement NOW Music album matching game 3D design, state machines and animations in Vue.js

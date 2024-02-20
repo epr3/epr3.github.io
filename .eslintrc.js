@@ -4,9 +4,7 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    node: true,
   },
-  parser: "@typescript-eslint/parser",
   extends: [
     // ...
     "eslint:recommended",
@@ -22,6 +20,8 @@ module.exports = {
       files: ["*.astro"],
       // Allows Astro components to be parsed.
       parser: "astro-eslint-parser",
+
+      processor: "astro/client-side-ts", // <- Uses the "client-side-ts" processor.
       // Parse the script in `.astro` as TypeScript by adding the following configuration.
       // It's the setting you need when using TypeScript.
       parserOptions: {

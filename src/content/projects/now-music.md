@@ -20,8 +20,8 @@ order: 9
 **Description**: Marketing website for managing subscriptions and devices for the NOW Music App (with an active subscriber count of ~500k users).
 
 #### Responsibilities
+
 - Implement NOW Music album matching game 3D design, state machines and animations in Vue.js
 - Implement registration and authentication flows in Vue.js and Laravel Blade templates
 - Implement website according to design
 - Implement SEO and tracking scripts to website
-

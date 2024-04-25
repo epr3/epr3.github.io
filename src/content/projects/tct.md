@@ -21,7 +21,7 @@ order: 3
 **Description**: A platform for organizing the implementation of a country's national biodiversity strategy after AICHI (and by case after EU Strategy).
 
 #### Responsibilities
+
 - Maintenance & bugfixing
 - Add new features to reporting dashboard
 - Collaborate with backend to implement data display and updates
-

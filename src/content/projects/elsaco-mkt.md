@@ -18,5 +18,5 @@ order: 4
 **Description**: Marketing website for the company.
 
 #### Responsibilities
-- Maintain website
 
+- Maintain website

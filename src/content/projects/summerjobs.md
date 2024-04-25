@@ -22,6 +22,7 @@ Project is forked. The original project is archived and/or deleted.
 **Description**: Marketing website advertising summer job offers primarily aimed towards students.
 
 #### Responsibilities
+
 - Maintain website
 - Add jobs and companies on the site
 - Implement styles according to design

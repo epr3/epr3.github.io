@@ -30,3 +30,5 @@ order: 11
 - Handled ETL operations for migration from Prismic CMS to Storyblok CMS
 - Participate in refactoring UI according to the atomic design philosophy
 - Handle serverless functions in Netlify for communicating with 3rd party apps
+- Maintain and develop the website's content management system
+- Implement and maintain caching API for providing filtering & searching from 3rd party API

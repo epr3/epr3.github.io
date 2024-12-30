@@ -26,8 +26,8 @@
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.3.0",
-    "@commitlint/config-conventional": "^19.2.2",
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
     "@iconify-json/heroicons": "^1.1.22",
     "@iconify-json/logos": "^1.1.43",
     "@typescript-eslint/parser": "^7.16.1",
@@ -36,7 +36,7 @@
     "@unocss/preset-web-fonts": "^0.61.3",
     "@unocss/reset": "^0.61.3",
     "@unocss/transformer-variant-group": "^0.61.3",
-    "@vitejs/plugin-react": "^4.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
     "eslint": "^9.7.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-astro": "^1.2.3",
@@ -46,7 +46,7 @@
     "simple-git-hooks": "^2.11.1",
     "typescript": "^5.4.5",
     "unocss": "^0.61.3",
-    "vite": "^5.3.3"
+    "vite": "^5.4.11"
   },
   "commitlint": {
     "extends": [

@@ -10,6 +10,7 @@ import {
 import { useRef, useState } from "react";
 
 const logos = {
+  "angular-icon": "i-logos-angular-icon",
   "astro-icon": "i-logos-astro-icon",
   aws: "i-logos-aws",
   bootstrap: "i-logos-bootstrap",

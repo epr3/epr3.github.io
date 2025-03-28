@@ -16,14 +16,14 @@
     "prepare": "pnpm simple-git-hooks"
   },
   "dependencies": {
-    "@astrojs/react": "4.1.2",
+    "@astrojs/react": "4.2.2",
     "@floating-ui/react": "0.27.2",
     "@types/react": "19.0.2",
     "@types/react-dom": "19.0.2",
-    "astro": "5.1.1",
+    "astro": "5.5.5",
     "dayjs": "1.11.13",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.6.1",

@@ -13,6 +13,7 @@ const experience = await loadExperience();
     <div class="max-w-[800px] mx-auto px-6 flex flex-col gap-24">
       <section>
         <div class="max-w-3xl">
+          <span class="block text-primary text-xs font-bold tracking-widest uppercase mb-4">[ 00 ] PROFILE</span>
           <h1 class="text-3xl md:text-5xl font-bold text-on-surface mb-4 leading-tight">
             Eduard Predescu
           </h1>
@@ -23,7 +24,7 @@ const experience = await loadExperience();
           </p>
           <div class="flex gap-6">
             <a
-              class="text-primary-fixed-dim hover:underline"
+              class="text-primary-fixed-dim hover:text-primary hover:underline focus-visible:outline-2 focus-visible:outline-solid focus-visible:outline-primary"
               href="https://github.com/epr3/"
               target="_blank"
               data-umami-event="Clicked Github"
@@ -31,7 +32,7 @@ const experience = await loadExperience();
               GitHub
             </a>
             <a
-              class="text-primary-fixed-dim hover:underline"
+              class="text-primary-fixed-dim hover:text-primary hover:underline focus-visible:outline-2 focus-visible:outline-solid focus-visible:outline-primary"
               href="https://www.linkedin.com/in/eduardpredescu/"
               target="_blank"
               data-umami-event="Clicked LinkedIn"
@@ -39,7 +40,7 @@ const experience = await loadExperience();
               LinkedIn
             </a>
             <a
-              class="text-primary-fixed-dim hover:underline"
+              class="text-primary-fixed-dim hover:text-primary hover:underline focus-visible:outline-2 focus-visible:outline-solid focus-visible:outline-primary"
               href="mailto:eduard.florin.predescu@gmail.com"
               target="_blank"
               data-umami-event="Clicked send email"
@@ -47,7 +48,7 @@ const experience = await loadExperience();
               Email
             </a>
             <a
-              class="text-primary-fixed-dim hover:underline"
+              class="text-primary-fixed-dim hover:text-primary hover:underline focus-visible:outline-2 focus-visible:outline-solid focus-visible:outline-primary"
               href="https://bsky.app/profile/epredescu.bsky.social"
               target="_blank"
               data-umami-event="Clicked BlueSky"
@@ -55,7 +56,7 @@ const experience = await loadExperience();
               Bluesky
             </a>
             <a
-              class="text-primary-fixed-dim hover:underline"
+              class="text-primary-fixed-dim hover:text-primary hover:underline focus-visible:outline-2 focus-visible:outline-solid focus-visible:outline-primary"
               href="/Eduard_Predescu_Resume.pdf"
               target="_blank"
               data-umami-event="Dowloaded resume"
@@ -68,7 +69,7 @@ const experience = await loadExperience();
 
       <section>
         <div class="flex flex-col">
-          <h2 class="text-xl font-bold text-on-surface mb-8">Experience</h2>
+          <h2 class="text-xl font-bold text-on-surface mb-8"><span class="text-primary">[ 01 ] EXPERIENCE</span></h2>
           <div class="flex flex-col gap-12">
             {
               experience.companies.map((company) => (
@@ -86,7 +87,7 @@ const experience = await loadExperience();
       <div>© {new Date().getFullYear()} Eduard Predescu.</div>
       <nav class="flex gap-6">
         <a
-          class="hover:text-primary-fixed-dim transition-colors"
+          class="hover:text-primary focus-visible:outline-2 focus-visible:outline-solid focus-visible:outline-primary transition-colors"
           href="mailto:eduard.florin.predescu@gmail.com"
           target="_blank"
           data-umami-event="Clicked send email"
@@ -94,7 +95,7 @@ const experience = await loadExperience();
           Email
         </a>
         <a
-          class="hover:text-primary-fixed-dim transition-colors"
+          class="hover:text-primary focus-visible:outline-2 focus-visible:outline-solid focus-visible:outline-primary transition-colors"
           href="https://www.linkedin.com/in/eduardpredescu/"
           target="_blank"
           data-umami-event="Clicked LinkedIn"
@@ -102,7 +103,7 @@ const experience = await loadExperience();
           LinkedIn
         </a>
         <a
-          class="hover:text-primary-fixed-dim transition-colors"
+          class="hover:text-primary focus-visible:outline-2 focus-visible:outline-solid focus-visible:outline-primary transition-colors"
           href="https://bsky.app/profile/epredescu.bsky.social"
           target="_blank"
           data-umami-event="Clicked BlueSky"
@@ -110,7 +111,7 @@ const experience = await loadExperience();
           Bluesky
         </a>
         <a
-          class="hover:text-primary-fixed-dim transition-colors"
+          class="hover:text-primary focus-visible:outline-2 focus-visible:outline-solid focus-visible:outline-primary transition-colors"
           href="https://github.com/epr3/"
           target="_blank"
           data-umami-event="Clicked Github"

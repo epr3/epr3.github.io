@@ -16,7 +16,7 @@ Domain language and decisions for this personal CV website.
 - **Section marker** — A cobalt, numbered, uppercase bracketed label that introduces a major Portfolio section.
 - **Skill** — A single technology or tool (e.g., `react`, `nuxt`, `docker`). Stored as JSON and referenced by projects.
 - **Reference design** — The static HTML/CSS implementation (`design-reference.html`) that serves as the canonical visual target for the portfolio.
-- **Dark palette** — The reference color system: `background` `#000000`, `surface` `#101415`, `on-surface` `#e0e3e5`, `primary` `#1d4ed8`, `secondary` `#bec6e0`, and the related surface/primary/secondary tokens.
+- **Dark palette** — The reference color system: `background` `#000000`, `surface` `#101415`, `on-surface` `#e0e3e5`, `primary` `#3b82f6`, `secondary` `#bec6e0`, and the related surface/primary/secondary tokens.
 - **JetBrains Mono** — The single font used across the portfolio, matching the reference design.
 
 ## Relationships

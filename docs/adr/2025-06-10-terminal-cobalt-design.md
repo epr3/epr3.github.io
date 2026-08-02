@@ -1,6 +1,6 @@
 # Adopt reference portfolio design
 
-The portfolio redesign (handover bundle) calls for a high-fidelity, TUI-inspired, minimalist personal site. The reference static implementation (`design-reference.html`) provides the exact color palette, typography, and layout. We apply that reference design to the existing Astro + UnoCSS build rather than switching to the handover's HTML/Tailwind example. The resulting site uses a dark Material-style palette (`background` `#000000`, `surface` `#101415`, `primary` `#1d4ed8`, `on-surface` `#e0e3e5`, `secondary` `#bec6e0`), JetBrains Mono, a compact hero, a single Experience list, inline "Tech stack: ..." lines, and a footer with contact links.
+The portfolio redesign (handover bundle) calls for a high-fidelity, TUI-inspired, minimalist personal site. The reference static implementation (`design-reference.html`) provides the exact color palette, typography, and layout. We apply that reference design to the existing Astro + UnoCSS build rather than switching to the handover's HTML/Tailwind example. The resulting site uses a dark Material-style palette (`background` `#000000`, `surface` `#101415`, `primary` `#3b82f6`, `on-surface` `#e0e3e5`, `secondary` `#bec6e0`), JetBrains Mono, a compact hero, a single Experience list, inline "Tech stack: ..." lines, and a footer with contact links.
 
 ## Considered options
 

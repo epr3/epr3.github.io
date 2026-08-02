@@ -24,8 +24,8 @@ const colors = {
   "on-surface-variant": "#c4c5d7",
   "on-background": "#e0e3e5",
   // primary
-  primary: "#1d4ed8",
-  "primary-container": "#1d4ed8",
+  primary: "#3b82f6",
+  "primary-container": "#3b82f6",
   "on-primary": "#002682",
   "on-primary-container": "#cad3ff",
   "primary-fixed": "#dce1ff",

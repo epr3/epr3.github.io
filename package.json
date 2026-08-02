@@ -3,10 +3,14 @@
   "type": "module",
   "packageManager": "pnpm@9.15.9",
   "version": "1.0.0",
+  "engines": {
+    "node": ">=22.22.3"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
+    "check": "astro check",
     "preview": "astro preview",
     "astro": "astro",
     "lint": "eslint --fix",
@@ -16,16 +20,17 @@
     "prepare": "pnpm simple-git-hooks"
   },
   "dependencies": {
-    "@astrojs/react": "4.4.2",
+    "@astrojs/react": "6.0.2",
     "@floating-ui/react": "0.27.20",
     "@types/react": "19.2.18",
     "@types/react-dom": "19.2.4",
-    "astro": "5.18.2",
+    "astro": "7.1.6",
     "dayjs": "1.11.21",
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
   },
   "devDependencies": {
+    "@astrojs/check": "0.9.10",
     "@commitlint/cli": "^21.2.1",
     "@commitlint/config-conventional": "^21.2.0",
     "@iconify-json/heroicons": "^1.2.3",
@@ -42,11 +47,10 @@
     "eslint": "^10.8.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-astro": "^3.0.1",
-    "eslint-plugin-markdown": "^5.1.0",
     "lint-staged": "^17.3.0",
     "prettier": "^3.9.6",
     "simple-git-hooks": "^2.13.1",
-    "typescript": "^5.4.5",
+    "typescript": "6.0.3",
     "unocss": "^66.7.5",
     "vite": "^8.2.0"
   },

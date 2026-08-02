@@ -34,5 +34,10 @@
       "matchPackageNames": ["astro", "react", "@astrojs{/,}**", "react-{/,}**"]
     }
   ],
-  "ignoreDeps": ["node", "typescript"]
+  "ignoreDeps": [
+    "node",
+    // TypeScript is capped until @typescript-eslint/parser supports >=6.1.0.
+    // See .scratch/dependency-upgrade/SPEC.md.
+    "typescript"
+  ]
 }

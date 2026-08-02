@@ -1,5 +1,5 @@
 ---
-import { type CollectionEntry, getEntries } from "astro:content";
+import { type CollectionEntry, getEntries, render } from "astro:content";
 import SkillsCard from "./SkillsCard.astro";
 
 export interface Props {
@@ -22,12 +22,12 @@ const computedSkills = {
     : [],
 };
 
-const render = await project.render();
+const { Content } = await render(project);
 ---
 
 <div class="flex flex-col gap-6">
   <div class="prose max-w-none">
-    <render.Content />
+    <Content />
   </div>
 
   <p class="font-semibold">Tech stack interacted with:</p>

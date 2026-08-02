@@ -19,17 +19,16 @@ if (!result.ok) {
 }
 
 const { title, link, description, responsibilities } = result.content;
-const stack = project.stack.map((s) => s.name).join(", ");
 ---
 
 <div>
   <p class="text-on-surface-variant font-medium mb-1">{title}</p>
   <p class="flex flex-col gap-1 text-label-sm font-label-sm text-on-surface-variant mt-2 mb-4">
-    <span>Tech stack: {stack}</span>
+    <span class="inline-flex flex-wrap items-center gap-x-1"><span>Tech stack:</span>{project.stack.map((s) => <span class="whitespace-nowrap">[ {s.name} ]</span>)}</span>
     {
       link && (
         <span>
-          Link: <a class="text-primary-fixed-dim hover:underline" href={link} target="_blank">{link}</a>
+          Link: <a class="text-primary-fixed-dim hover:text-primary hover:underline focus-visible:outline-2 focus-visible:outline-solid focus-visible:outline-primary transition-colors" href={link} target="_blank">{link}</a>
         </span>
       )
     }

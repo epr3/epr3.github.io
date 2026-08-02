@@ -1,6 +1,5 @@
 ---
-import { type CollectionEntry, getEntries, render } from "astro:content";
-import SkillsCard from "./SkillsCard.astro";
+import { type CollectionEntry, getEntries } from "astro:content";
 
 export interface Props {
   project: CollectionEntry<"projects">;
@@ -8,44 +7,48 @@ export interface Props {
 
 const { project } = Astro.props;
 
-const computedSkills = {
-  frontend: project.data.skills.frontend
-    ? (await getEntries(project.data.skills.frontend)).map(
-        (skill) => skill.data
-      )
-    : [],
-  backend: project.data.skills.backend
-    ? (await getEntries(project.data.skills.backend)).map((skill) => skill.data)
-    : [],
-  devops: project.data.skills.devops
-    ? (await getEntries(project.data.skills.devops)).map((skill) => skill.data)
-    : [],
-};
+const body = project.body ?? "";
 
-const { Content } = await render(project);
+// Project name = first `### ` heading in the Markdown description.
+const name = body.match(/^###\s+(.+)$/m)?.[1]?.trim() ?? project.id;
+
+// Bullet points = `- `/`* ` list items in the Markdown description.
+const bullets = [...body.matchAll(/^[-*]\s+(.+)$/gm)].map((m) => m[1].trim());
+
+// Optional project link (`#### Link: ...`).
+const link = body.match(/^####\s+link:\s*(.+)$/im)?.[1]?.trim();
+
+// Flatten skill categories into one deduplicated list, category order preserved.
+const categories = ["frontend", "backend", "devops", "general"] as const;
+const seen = new Set<string>();
+const skillRefs = categories.flatMap((category) =>
+  (project.data.skills[category] ?? []).filter((ref) => {
+    if (seen.has(ref.id)) return false;
+    seen.add(ref.id);
+    return true;
+  })
+);
+const skills = await getEntries(skillRefs);
+const stack = skills.map((skill) => skill.data.name).join(", ");
 ---
 
-<div class="flex flex-col gap-6">
-  <div class="prose max-w-none">
-    <Content />
-  </div>
-
-  <p class="font-semibold">Tech stack interacted with:</p>
-  <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+<div>
+  <p class="text-on-surface-variant font-medium mb-1">{name}</p>
+  <p class="flex flex-col gap-1 text-label-sm font-label-sm text-on-surface-variant mt-2 mb-4">
+    <span>Tech stack: {stack}</span>
     {
-      !!computedSkills.frontend.length && (
-        <SkillsCard name="Frontend" projects={computedSkills.frontend} />
+      link && (
+        <span>
+          Link: <a class="text-primary-fixed-dim hover:underline" href={link} target="_blank">{link}</a>
+        </span>
       )
     }
-    {
-      !!computedSkills.backend.length && (
-        <SkillsCard name="Backend" projects={computedSkills.backend} />
-      )
-    }
-    {
-      !!computedSkills.devops.length && (
-        <SkillsCard name="DevOps" projects={computedSkills.devops} />
-      )
-    }
-  </div>
+  </p>
+  {
+    bullets.length > 0 && (
+      <ul class="list-disc pl-5 text-on-surface opacity-80 space-y-1">
+        {bullets.map((bullet) => <li>{bullet}</li>)}
+      </ul>
+    )
+  }
 </div>

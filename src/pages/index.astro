@@ -1,6 +1,4 @@
 ---
-import cta from "../assets/images/cta.svg";
-
 import Company from "../components/Company.astro";
 
 import Layout from "../layouts/Layout.astro";
@@ -19,87 +17,115 @@ companiesWithProjects.sort((a, b) => (a.order > b.order ? -1 : 1));
 ---
 
 <Layout title="Eduard Predescu">
-  <div class="flex flex-col gap-10 px-4">
-    <div class="flex flex-col gap-8 max-w-prose container mx-auto mb-10">
-      <h3 class="text-3xl text-white text-center font-passion">
-        Hello, I'm <span class="text-[#FFF500]">Eduard Predescu</span> 👋
-      </h3>
+  <main class="flex-grow z-10 pt-16 pb-24 relative">
+    <div class="max-w-[800px] mx-auto px-6 flex flex-col gap-24">
+      <section>
+        <div class="max-w-3xl">
+          <h1 class="text-3xl md:text-5xl font-bold text-on-surface mb-4 leading-tight">
+            Eduard Predescu
+          </h1>
+          <p class="text-xl text-on-surface mb-8">Senior Frontend Engineer.</p>
+          <p class="text-base text-on-surface opacity-80 max-w-2xl mb-8">
+            Frontend engineer based in Bucharest, RO, with 7+ years of
+            experience building web apps with Vue, Nuxt, React, and Next.js.
+          </p>
+          <div class="flex gap-6">
+            <a
+              class="text-primary-fixed-dim hover:underline"
+              href="https://github.com/epr3/"
+              target="_blank"
+              data-umami-event="Clicked Github"
+            >
+              GitHub
+            </a>
+            <a
+              class="text-primary-fixed-dim hover:underline"
+              href="https://www.linkedin.com/in/eduardpredescu/"
+              target="_blank"
+              data-umami-event="Clicked LinkedIn"
+            >
+              LinkedIn
+            </a>
+            <a
+              class="text-primary-fixed-dim hover:underline"
+              href="mailto:eduard.florin.predescu@gmail.com"
+              target="_blank"
+              data-umami-event="Clicked send email"
+            >
+              Email
+            </a>
+            <a
+              class="text-primary-fixed-dim hover:underline"
+              href="https://bsky.app/profile/epredescu.bsky.social"
+              target="_blank"
+              data-umami-event="Clicked BlueSky"
+            >
+              Bluesky
+            </a>
+            <a
+              class="text-primary-fixed-dim hover:underline"
+              href="/Eduard_Predescu_Resume.pdf"
+              target="_blank"
+              data-umami-event="Dowloaded resume"
+            >
+              Resume
+            </a>
+          </div>
+        </div>
+      </section>
 
-      <p class="text-xl text-white text-center font-inconsolata">
-        I am a front end/full stack developer based in Bucharest, RO. I have 7
-        years of experience working (mostly) with front end technologies, but
-        also with back end technologies.
-      </p>
+      <section>
+        <div class="flex flex-col">
+          <h2 class="text-xl font-bold text-on-surface mb-8">Experience</h2>
+          <div class="flex flex-col gap-12">
+            {
+              companiesWithProjects.map((item) => (
+                <Company name={item.name} id={item.id} />
+              ))
+            }
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
 
-      <p class="text-xl text-white text-center font-inconsolata">
-        I make web applications, usually with Nuxt/Next.js and whatever
-        technology is needed for the required use-case.
-      </p>
+  <footer class="font-body-md text-sm w-full py-12">
+    <div class="max-w-[800px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-on-surface opacity-60">
+      <div>© {new Date().getFullYear()} Eduard Predescu.</div>
+      <nav class="flex gap-6">
+        <a
+          class="hover:text-primary-fixed-dim transition-colors"
+          href="mailto:eduard.florin.predescu@gmail.com"
+          target="_blank"
+          data-umami-event="Clicked send email"
+        >
+          Email
+        </a>
+        <a
+          class="hover:text-primary-fixed-dim transition-colors"
+          href="https://www.linkedin.com/in/eduardpredescu/"
+          target="_blank"
+          data-umami-event="Clicked LinkedIn"
+        >
+          LinkedIn
+        </a>
+        <a
+          class="hover:text-primary-fixed-dim transition-colors"
+          href="https://bsky.app/profile/epredescu.bsky.social"
+          target="_blank"
+          data-umami-event="Clicked BlueSky"
+        >
+          Bluesky
+        </a>
+        <a
+          class="hover:text-primary-fixed-dim transition-colors"
+          href="https://github.com/epr3/"
+          target="_blank"
+          data-umami-event="Clicked Github"
+        >
+          GitHub
+        </a>
+      </nav>
     </div>
-    <div class="container max-w-prose mx-auto flex justify-center gap-4">
-      <a
-        class="p-4 rounded-full bg-white shadow-lg"
-        href="mailto:eduard.florin.predescu@gmail.com"
-        target="_blank"
-        aria-label="Send me an email"
-        data-umami-event="Clicked send email"
-      >
-        <div class="i-heroicons-envelope text-black w-8 h-8"></div>
-      </a>
-      <a
-        class="p-4 rounded-full bg-white shadow-lg"
-        href="https://www.linkedin.com/in/eduardpredescu/"
-        target="_blank"
-        aria-label="Access my LinkedIn"
-        data-umami-event="Clicked LinkedIn"
-      >
-        <div class="i-logos-linkedin-icon w-8 h-8"></div>
-      </a>
-      <a
-        class="p-4 rounded-full bg-white shadow-lg"
-        href="https://bsky.app/profile/epredescu.bsky.social"
-        target="_blank"
-        aria-label="Follow me on BlueSky"
-        data-umami-event="Clicked BlueSky"
-      >
-        <div class="i-logos-bluesky w-8 h-8"></div>
-      </a>
-      <a
-        class="p-4 rounded-full bg-white shadow-lg"
-        href="https://github.com/epr3/"
-        target="_blank"
-        aria-label="View my GitHub"
-        data-umami-event="Clicked Github"
-      >
-        <div class="i-logos-github-icon w-8 h-8"></div>
-      </a>
-      <a
-        class="relative p-4 rounded-full bg-white shadow-lg"
-        href="/Eduard_Predescu_Resume.pdf"
-        target="_blank"
-        aria-label="Get my resume"
-        data-umami-event="Dowloaded resume"
-      >
-        <img
-          class="absolute right-[80%] bottom-full max-w-none w-[150px]"
-          src={cta.src}
-          width={cta.width}
-          height={cta.height}
-          alt="Stylized call to action"
-        />
-        <div class="i-heroicons-document-solid text-black w-8 h-8"></div>
-      </a>
-    </div>
-
-    <div class="container max-w-prose mx-auto flex flex-col">
-      <h2 class="text-white text-2xl text-center font-bold">Experience</h2>
-      <div class="flex flex-col gap-10 divide-y-2 divide-[#FFF500]">
-        {
-          companiesWithProjects.map((item) => (
-            <Company name={item.name} id={item.id} />
-          ))
-        }
-      </div>
-    </div>
-  </div>
+  </footer>
 </Layout>

@@ -1,54 +1,32 @@
-# Astro Starter Kit: Basics
+# personal-cv
 
-```
-npm create astro@latest -- --template basics
-```
+Static Astro + UnoCSS portfolio site. Built and deployed to GitHub Pages.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Architecture
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+The Portfolio is a single-page static site. Astro renders content collections (experience, titles, projects, skills) into HTML at build time. UnoCSS provides utility classes and web fonts. There is no client-side JavaScript or hydration — every page is fully static.
 
-![basics](https://user-images.githubusercontent.com/4677417/186188965-73453154-fdec-4d6b-9c34-cb35c248ae5b.png)
+## Tech Stack
 
-## 🚀 Project Structure
+- **Astro** — static site generator and content collections
+- **UnoCSS** — atomic CSS engine with Wind CSS preset and web fonts
+- **TypeScript** — strict mode, Astro-aware checking
 
-Inside of your Astro project, you'll see the following folders and files:
+## Commands
 
-```
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+| Command        | Action                                      |
+| :------------- | :------------------------------------------ |
+| `pnpm install` | Install dependencies                        |
+| `pnpm dev`     | Start local dev server                      |
+| `pnpm build`   | Build production site to `./dist/`          |
+| `pnpm preview` | Preview built site locally                  |
+| `pnpm check`   | Run Astro-aware type and content validation |
+| `pnpm lint`    | Run ESLint with auto-fix                    |
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Content
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Experience, titles, projects, and skills are stored as JSON and Markdown in `src/content/`. Edit those files to update the CV. The content schemas are defined in `src/content.config.ts`.
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Deployment
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:3000`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Pushes to `main` trigger a GitHub Pages build via `.github/workflows/deploy.yml`. The site is served from `dist/`.

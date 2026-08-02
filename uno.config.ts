@@ -1,8 +1,6 @@
 import {
   defineConfig,
-  presetIcons,
   presetWind3,
-  presetTypography,
   presetWebFonts,
   transformerVariantGroup,
 } from "unocss";
@@ -89,39 +87,6 @@ export default defineConfig({
       provider: "google",
       fonts: {
         mono: "JetBrains Mono:400,500,700",
-      },
-    }),
-    presetTypography({
-      // prose (Markdown descriptions) matches the dark reference palette
-      colorScheme: {
-        body: "#e0e3e5",
-        headings: "#e0e3e5",
-        lead: "#e0e3e5",
-        links: "#1d4ed8",
-        bold: "#e0e3e5",
-        counters: "#c4c5d7",
-        bullets: "#8e90a0",
-        hr: "#434655",
-        quotes: "#e0e3e5",
-        "quote-borders": "#434655",
-        captions: "#c4c5d7",
-        kbd: "#e0e3e5",
-        // kbd shadow is used as rgb(var(--un-prose-kbd-shadows) / 10%) — needs components
-        "kbd-shadows": "0 0 0",
-        code: "#e0e3e5",
-        "pre-code": "#e0e3e5",
-        "pre-bg": "#101415",
-        "th-borders": "#434655",
-        "td-borders": "#434655",
-      },
-    }),
-    presetIcons({
-      collections: {
-        heroicons: () =>
-          import("@iconify-json/heroicons/icons.json").then((i) => i.default),
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        //@ts-ignore
-        logos: import("@iconify-json/logos/icons.json").then((i) => i.default),
       },
     }),
   ],

@@ -1,44 +1,28 @@
 ---
-import dayjs from "dayjs";
-import { getCollection } from "astro:content";
+import { formatMonthYear } from "../lib/projection";
+import type { ProjectedCompany } from "../lib/projection";
 import Project from "./Project.astro";
+
 export interface Props {
-  id: string;
-  name: string;
+  company: ProjectedCompany;
 }
 
-const { id, name } = Astro.props;
-
-const titles = await getCollection(
-  "titles",
-  (entry) => entry.data.company.id === id
-);
-
-titles.sort((a, b) => (a.data.startDate > b.data.startDate ? -1 : 1));
-
-const projects = await getCollection(
-  "projects",
-  (entry) => entry.data.company.id === id
-);
-
-projects.sort((a, b) => (a.data.order > b.data.order ? -1 : 1));
-
-const fmt = (date: string) => dayjs(date).format("MMM YYYY");
+const { company } = Astro.props;
 ---
 
 <div>
   {
-    titles.map((title) => (
+    company.roles.map((role) => (
       <p class="text-on-surface font-bold mb-2">
-        {name} | {title.data.title} | {fmt(title.data.startDate)} -{" "}
-        {title.data.endDate ? fmt(title.data.endDate) : "Present"}
+        {company.name} | {role.title} | {formatMonthYear(role.startDate)} -{" "}
+        {role.endDate ? formatMonthYear(role.endDate) : "Present"}
       </p>
     ))
   }
   {
-    projects.length > 0 && (
+    company.projects.length > 0 && (
       <div class="flex flex-col gap-4 pl-5">
-        {projects.map((project) => <Project project={project} />)}
+        {company.projects.map((project) => <Project project={project} />)}
       </div>
     )
   }

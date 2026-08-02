@@ -3,17 +3,9 @@ import Company from "../components/Company.astro";
 
 import Layout from "../layouts/Layout.astro";
 
-import { getCollection } from "astro:content";
+import { loadExperience } from "../lib/experience-loader";
 
-const companiesEntries = await getCollection("experience");
-
-const companiesWithProjects = companiesEntries.map((item) => ({
-  name: item.data.companyName,
-  order: item.data.order,
-  id: item.id,
-}));
-
-companiesWithProjects.sort((a, b) => (a.order > b.order ? -1 : 1));
+const experience = await loadExperience();
 ---
 
 <Layout title="Eduard Predescu">
@@ -79,8 +71,8 @@ companiesWithProjects.sort((a, b) => (a.order > b.order ? -1 : 1));
           <h2 class="text-xl font-bold text-on-surface mb-8">Experience</h2>
           <div class="flex flex-col gap-12">
             {
-              companiesWithProjects.map((item) => (
-                <Company name={item.name} id={item.id} />
+              experience.companies.map((company) => (
+                <Company company={company} />
               ))
             }
           </div>

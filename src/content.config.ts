@@ -6,7 +6,6 @@ const experience = defineCollection({
   loader: glob({ base: "./src/content/experience", pattern: "**/*.json" }),
   schema: z.object({
     companyName: z.string(),
-    logo: z.string().optional(),
     order: z.number(),
   }),
 });
@@ -39,7 +38,6 @@ const skills = defineCollection({
   loader: glob({ base: "./src/content/skills", pattern: "**/*.json" }),
   schema: z.object({
     name: z.string(),
-    logo: z.string().optional(),
   }),
 });
 

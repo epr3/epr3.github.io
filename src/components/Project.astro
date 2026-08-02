@@ -1,13 +1,13 @@
 ---
-import { type CollectionEntry, getEntries } from "astro:content";
+import type { ProjectedProject } from "../lib/projection";
 
 export interface Props {
-  project: CollectionEntry<"projects">;
+  project: ProjectedProject;
 }
 
 const { project } = Astro.props;
 
-const body = project.body ?? "";
+const body = project.entry.body ?? "";
 
 // Project name = first `### ` heading in the Markdown description.
 const name = body.match(/^###\s+(.+)$/m)?.[1]?.trim() ?? project.id;
@@ -18,18 +18,7 @@ const bullets = [...body.matchAll(/^[-*]\s+(.+)$/gm)].map((m) => m[1].trim());
 // Optional project link (`#### Link: ...`).
 const link = body.match(/^####\s+link:\s*(.+)$/im)?.[1]?.trim();
 
-// Flatten skill categories into one deduplicated list, category order preserved.
-const categories = ["frontend", "backend", "devops", "general"] as const;
-const seen = new Set<string>();
-const skillRefs = categories.flatMap((category) =>
-  (project.data.skills[category] ?? []).filter((ref) => {
-    if (seen.has(ref.id)) return false;
-    seen.add(ref.id);
-    return true;
-  })
-);
-const skills = await getEntries(skillRefs);
-const stack = skills.map((skill) => skill.data.name).join(", ");
+const stack = project.stack.map((s) => s.name).join(", ");
 ---
 
 <div>

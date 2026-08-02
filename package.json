@@ -18,6 +18,7 @@
     "lint:fix": "eslint",
     "lint:format": "pnpm lint:fix && pnpm format",
     "test": "vitest run",
+    "test:content": "vitest run src/lib/project-content.test.ts",
     "prepare": "pnpm simple-git-hooks"
   },
   "dependencies": {

@@ -25,7 +25,7 @@ order: 10
 - Implement data display and stateful betslip management using Vue.js
 - Implement graphs and statistics related to matches and bet performance in D3.js
 
-### Other responsibilities
+#### Other responsibilities
 
 - Handled technical interviews for candidates on Front End roles
 - Helped colleagues on Front End related queries

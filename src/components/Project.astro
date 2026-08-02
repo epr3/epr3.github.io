@@ -1,5 +1,6 @@
 ---
 import type { ProjectedProject } from "../lib/projection";
+import { parseProjectBody } from "../lib/project-content";
 
 export interface Props {
   project: ProjectedProject;
@@ -8,21 +9,21 @@ export interface Props {
 const { project } = Astro.props;
 
 const body = project.entry.body ?? "";
+const result = parseProjectBody(body, `${project.id}.md`);
 
-// Project name = first `### ` heading in the Markdown description.
-const name = body.match(/^###\s+(.+)$/m)?.[1]?.trim() ?? project.id;
+if (!result.ok) {
+  const { source, errors } = result.diagnostics;
+  throw new Error(
+    `Project "${source}" has invalid content:\n${errors.map((e) => `  - ${e}`).join("\n")}`
+  );
+}
 
-// Bullet points = `- `/`* ` list items in the Markdown description.
-const bullets = [...body.matchAll(/^[-*]\s+(.+)$/gm)].map((m) => m[1].trim());
-
-// Optional project link (`#### Link: ...`).
-const link = body.match(/^####\s+link:\s*(.+)$/im)?.[1]?.trim();
-
+const { title, link, description, responsibilities } = result.content;
 const stack = project.stack.map((s) => s.name).join(", ");
 ---
 
 <div>
-  <p class="text-on-surface-variant font-medium mb-1">{name}</p>
+  <p class="text-on-surface-variant font-medium mb-1">{title}</p>
   <p class="flex flex-col gap-1 text-label-sm font-label-sm text-on-surface-variant mt-2 mb-4">
     <span>Tech stack: {stack}</span>
     {
@@ -34,10 +35,18 @@ const stack = project.stack.map((s) => s.name).join(", ");
     }
   </p>
   {
-    bullets.length > 0 && (
-      <ul class="list-disc pl-5 text-on-surface opacity-80 space-y-1">
-        {bullets.map((bullet) => <li>{bullet}</li>)}
-      </ul>
+    description && (
+      <p class="text-on-surface opacity-80 mb-3">{description}</p>
     )
+  }
+  {
+    responsibilities.map((section) => (
+      <div class="mb-3">
+        <p class="text-on-surface-variant font-medium text-sm mb-1">{section.heading}</p>
+        <ul class="list-disc pl-5 text-on-surface opacity-80 space-y-1">
+          {section.bullets.map((bullet) => <li>{bullet}</li>)}
+        </ul>
+      </div>
+    ))
   }
 </div>

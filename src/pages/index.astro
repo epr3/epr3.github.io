@@ -3,6 +3,7 @@ import Company from "../components/Company.astro";
 
 import Layout from "../layouts/Layout.astro";
 
+import { EMAIL_CONTACT_EVENT } from "../lib/contact-action";
 import { loadExperience } from "../lib/experience-loader";
 
 const experience = await loadExperience();
@@ -39,14 +40,14 @@ const experience = await loadExperience();
             >
               LinkedIn
             </a>
-            <a
+            <button
+              type="button"
               class="text-primary-fixed-dim hover:text-primary hover:underline focus-visible:outline-2 focus-visible:outline-solid focus-visible:outline-primary"
-              href="mailto:eduard.florin.predescu@gmail.com"
-              target="_blank"
-              data-umami-event="Clicked send email"
+              data-email-contact
+              data-umami-event={EMAIL_CONTACT_EVENT}
             >
               Email
-            </a>
+            </button>
             <a
               class="text-primary-fixed-dim hover:text-primary hover:underline focus-visible:outline-2 focus-visible:outline-solid focus-visible:outline-primary"
               href="https://bsky.app/profile/epredescu.bsky.social"
@@ -86,14 +87,14 @@ const experience = await loadExperience();
     <div class="max-w-[800px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-on-surface opacity-60">
       <div>© {new Date().getFullYear()} Eduard Predescu.</div>
       <nav class="flex gap-6">
-        <a
+        <button
+          type="button"
           class="hover:text-primary focus-visible:outline-2 focus-visible:outline-solid focus-visible:outline-primary transition-colors"
-          href="mailto:eduard.florin.predescu@gmail.com"
-          target="_blank"
-          data-umami-event="Clicked send email"
+          data-email-contact
+          data-umami-event={EMAIL_CONTACT_EVENT}
         >
           Email
-        </a>
+        </button>
         <a
           class="hover:text-primary focus-visible:outline-2 focus-visible:outline-solid focus-visible:outline-primary transition-colors"
           href="https://www.linkedin.com/in/eduardpredescu/"
@@ -121,4 +122,9 @@ const experience = await loadExperience();
       </nav>
     </div>
   </footer>
+  <script>
+    import { initContactActions } from "../lib/contact-action";
+
+    initContactActions();
+  </script>
 </Layout>

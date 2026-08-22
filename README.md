@@ -4,7 +4,7 @@ Static Astro + UnoCSS portfolio site. Built and deployed to GitHub Pages.
 
 ## Architecture
 
-The Portfolio is a single-page static site. Astro renders content collections (experience, titles, projects, skills) into HTML at build time. UnoCSS provides utility classes and web fonts. There is no client-side JavaScript or hydration — every page is fully static.
+The Portfolio is a single-page static site. Astro renders content collections (experience, titles, projects, skills) into HTML at build time. UnoCSS provides utility classes and web fonts. A small client-side script assembles the email contact destination only when a visitor activates a contact button; every page remains fully static.
 
 ## Tech Stack
 

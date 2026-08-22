@@ -18,6 +18,7 @@ Domain language and decisions for this personal CV website.
 - **Reference design** — The static HTML/CSS implementation (`design-reference.html`) that serves as the canonical visual target for the portfolio.
 - **Dark palette** — The reference color system: `background` `#000000`, `surface` `#101415`, `on-surface` `#e0e3e5`, `primary` `#3b82f6`, `secondary` `#bec6e0`, and the related surface/primary/secondary tokens.
 - **JetBrains Mono** — The single font used across the portfolio, matching the reference design.
+- **Obfuscated email link** — A Portfolio contact link whose email address is assembled in the browser rather than published in the static HTML.
 
 ## Relationships
 

@@ -22,7 +22,7 @@
     "prepare": "pnpm simple-git-hooks"
   },
   "dependencies": {
-    "astro": "7.2.4"
+    "astro": "7.3.2"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.10",
